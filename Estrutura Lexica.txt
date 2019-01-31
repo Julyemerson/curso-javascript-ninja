@@ -1,0 +1,42 @@
+Estrutura Lexica do Javascript
+
+
+ - Js é Case Sensitive:
+
+	var animal = 'cachorro'; 
+	var Animal = 'Macaco'; 
+
+	animal !== Animal
+
+ - Comentarios: 
+
+	De linha - // 
+	De Blobo - /* */
+
+ - Literais:
+	
+	12     , true
+	1.2    , null
+	'ninja', {a: 1}
+	"ninja", [1, 2]
+
+ - Identificadores:
+
+	_ ou $
+	letras  de  a a z
+	letras  de  A a Z
+	digitos de  0 a 9
+	Qualquer caractere Unicode
+
+ - Palavras Reservadas 
+	
+	Ver link do MDN sobre o assunto. 
+
+
+	
+
+	   
+	
+
+	
+			
