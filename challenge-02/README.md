@@ -13,10 +13,10 @@ function soma(a, b) {
 var a = soma(2, 4) + 5
 
 // Qual o valor atualizado dessa variável?
-?
+a = 9;
 
 // Declare uma nova variável, sem valor.
-?
+var myvar; 
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
