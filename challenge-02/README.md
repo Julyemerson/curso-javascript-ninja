@@ -23,7 +23,10 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function valor(a) {
+    myvar = a
+    return "o valor da variavel myvar é " + myvar 
+}   
 
 // Invoque a função criada acima.
 ?
