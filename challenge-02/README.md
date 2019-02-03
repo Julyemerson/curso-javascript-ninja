@@ -29,10 +29,10 @@ function valor(a) {
 }   
 
 // Invoque a função criada acima.
-?
+valor(10)
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* A função retorna: o valor da variavel myvar é 10 */ 
 
 /*
 Crie uma função com as seguintes características:
@@ -41,19 +41,24 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+function atividade(a, b, c) { 
+    if(a == " " || b == " " || c == " ") {
+        return "Digite todos os valores corretamente"        
+    }
+    return a * b * c + 2 
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+function atividade(1,2) 
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// NaN
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+atividade(2,2,2)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+// 10
 
 /*
 Crie uma função com as seguintes características:
