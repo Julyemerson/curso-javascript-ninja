@@ -84,7 +84,14 @@ function status(a , b, c) {
     }
     else if (a === undefined && b !== undefined && c !== undefined) {
         return b + c
-    } 
+    }
+    else if (a !== undefined && b !== undefined && c !== undefined) {
+        return (a + b) / c
+    }
+    else if (a === undefined && b === undefined && c === undefined) {
+        return false 
+    }
+    else return null        
 
 }
 
