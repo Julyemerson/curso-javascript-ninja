@@ -79,9 +79,13 @@ function status(a , b, c) {
     else if (a === undefined && b === undefined && c !== undefined ) {
         return c 
     }
-    else if (a !== undefined  )
+    else if (a !== undefined && b !== undefined && c === undefined ) {
+        return a + b 
+    }
+    else if (a === undefined && b !== undefined && c !== undefined) {
+        return b + c
+    } 
 
-    
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
