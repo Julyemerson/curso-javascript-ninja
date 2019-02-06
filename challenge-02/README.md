@@ -99,5 +99,6 @@ function status(a , b, c) {
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 status(5) // 5
-status()
+status(5,5) // 10
+status(5,5,5) // 2
 ```
