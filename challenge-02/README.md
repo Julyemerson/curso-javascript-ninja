@@ -76,9 +76,11 @@ function status(a , b, c) {
     else if (a === undefined && b !== undefined && c === undefined) {
         return b 
     }
-    else (a === undefined && b === undefined && c !== undefined ) {
+    else if (a === undefined && b === undefined && c !== undefined ) {
         return c 
     }
+    else if (a !== undefined  )
+
     
 }
 
