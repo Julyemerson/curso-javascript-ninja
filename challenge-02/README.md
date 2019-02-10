@@ -42,9 +42,9 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 function atividade(a, b, c) { 
-    if(a == " " || b == " " || c == " ") {
+    if(a === undefined || b === undefined || c === undefined) {
         return "Digite todos os valores corretamente"        
-    }
+    } 
     return a * b * c + 2 
 }
 
@@ -73,23 +73,8 @@ function status(a , b, c) {
     if (a !== undefined && b === undefined && c === undefined ) {
         return a 
     }
-    else if (a === undefined && b !== undefined && c === undefined)  {
-        return b 
-    } 
-    else if (a === undefined && b === undefined && c !== undefined ) {
-        return c 
-    }
-    else if (a !== undefined && b !== undefined && c === undefined ) {
-        return a + b 
-    }
-    else if (a === undefined && b !== undefined && c !== undefined)  {
-        return b + c
-    }
-    else if (a !== undefined && b === undefined && c !== undefined)  {
-        return a + c
-    }
-    else if (a !== undefined && b !== undefined && c !== undefined)  {
-        return (a + b) / c
+    else if (a !== undefined && b !== undefined && c === undefined)  {
+        return a + b
     }
     else if (a === undefined && b === undefined && c === undefined)  {
         return false 
