@@ -18,7 +18,7 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 */
 pessoa = {
     nome: "Julyemerson",
-    Sobrenome: "Leonizio",
+    sobrenome: "Leonizio",
     sexo: "masculino",
     idade: 24,
     altura: 1.76,
@@ -72,7 +72,7 @@ pessoa.nomeCompleto = function() {
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-pessoa.mostrarIdade() = function() {
+pessoa.mostrarIdade = function() {
     return "Olá!, eu tenho " + pessoa.idade + " " + "anos!"
 }
 
@@ -80,7 +80,7 @@ pessoa.mostrarIdade() = function() {
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-pessoa.mostrarPeso() = function() {
+pessoa.mostrarPeso = function() {
     return "Eu peso " + pessoa.peso + "kg"
 }
 
@@ -171,6 +171,8 @@ Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
 retornar a string:
 - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
 
+
+
 Só que, antes de retornar a string, você vai fazer algumas validações:
 - Se o `sexo` de `pessoa` for "Feminino", a frase acima, no início da
 apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do "o";
@@ -182,8 +184,28 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao = function() {
+  var sexo = 'o';
+  var idadeAnos = 'anos'; 
+  var metrosCaminhados = 'metros';
+  
+  if(pessoa.sexo === 'feminino') {
+      sexo = 'a';
+  }
+
+  if(pessoa.idade === 1) {
+      idadeAnos = 'ano';
+  }
+
+  if(pessoa.caminhouQuantosMetros === 1){
+        metrosCaminhados = 'metro'
+  }
+
+  return "Olá, eu sou "+ sexo +" " + pessoa.nome + " " + pessoa.sobrenome + " tenho " + pessoa.idade + " "+ idadeAnos +" " + pessoa.altura + ", meu peso é " + pessoa.peso + " e, só hoje, eu já caminhei " + pessoa.caminhouQuantosMetros + " "+ metrosCaminhados +""  
+
+}
 
 // Agora, apresente-se ;)
-?
+ pessoa.apresentacao() // Olá, eu sou o Julyemerson Leonizio tenho 24 anos 1.76, meu peso é 92 e, só hoje, eu já caminhei 40 metros
 ```
