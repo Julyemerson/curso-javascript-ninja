@@ -2,17 +2,21 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var myArray = ["julyemerson", 24, true, "14/03/1995", 1];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+var retornaArray = function(arr) {
+    return arr
+}; 
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+
+console.log(retornaArray(myArray)[1]);
+
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +24,21 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+var doisParams = function(a,b){
+    return [a][b]
+};
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+
+var arr = ["julyemerson",2,[1,2],null, undefined];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(doisParams(arr,[0]))
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,8 +54,31 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
-
+var book = function(nome){
+    var describeBooks = {
+        breveHistoriaDoTempo : {
+            quantidadePaginas: 256,
+            autor: 'Stephen Hawking',
+            editora: 'Bantam Books',
+            assunto: 'cosmologia'
+        },
+        pontoDeInflexao : {
+            quantidadePaginas: 208,
+            autor: 'Flavio Augusto',
+            editora:'Buzz Editora',
+            assunto:'empreendedorismo'  
+        },
+        doMilAoMilhao : {
+            quantidadePaginas: 192,
+            autor: 'Thiago Nigro',
+            editora: 'Harpercollins',
+            assunto: 'empreendedorismo'
+        }
+    };
+    
+    return nome === undefined ? describeBooks : describeBooks.nome ; 
+}
+console.log(book());
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
