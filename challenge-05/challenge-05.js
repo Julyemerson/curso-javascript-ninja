@@ -54,7 +54,7 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-var book = function(nome){
+function books(nome){
     var describeBooks = {
         breveHistoriaDoTempo : {
             quantidadePaginas: 256,
@@ -76,31 +76,43 @@ var book = function(nome){
         }
     };
     
-    return nome === undefined ? describeBooks : describeBooks.nome ; 
+    return describeBooks
 }
-console.log(book());
+
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(books()); 
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+
+var quantidadePaginasLivro = books().pontoDeInflexao.quantidadePaginas; 
+var nomeLivro = Object.keys(books())[1];
+
+console.log("O Livro "+ nomeLivro +" tem "+ quantidadePaginasLivro +" páginas!");
+
+
+
+
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+
+var nomeAutor = books().pontoDeInflexao.autor;
+console.log("O autor do livro "+ nomeLivro +" é "+ nomeAutor+".");
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+var nomeEditora = books().pontoDeInflexao.editora;
+console.log("O livro "+ nomeLivro +" foi publicado pela editora "+ nomeEditora +".");
+
