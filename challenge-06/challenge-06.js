@@ -13,7 +13,8 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = ['America-RN', 'ABC', 'Alecrim', 'Globo', 'potiguar']
+var teams = ['America-RN', 'ABC', 'Alecrim', 'Globo', 'Potiguar']
+
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -34,17 +35,42 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 var showTeamPosition = function(posicaoTime) {
     switch( posicaoTime ) {
-        case 0: 
-            console.log("O time que está em [POSIÇÃO]º lugar é o [NOME DO TIME].");
+        case 1:
+            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[0]+ ".");
+        break;
+        case 2:
+            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[1]+ ".");
         break; 
-    };
+        case 3:
+            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[2]+ ".");
+        break;
+        case 4:
+            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[3]+ ".");
+        break; 
+        case 5:
+            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[4]+ ".");
+        break;
+        default: 
+            console.log("Não temos a informação do time que está nessa posição.")
+        break;
+        };
+
 };
+
+console.log(showTeamPosition(6));
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-// ?
+
+
+
+var i = 0
+while( i < teams.length -1 ) {
+    i++
+    console.log(showTeamPosition(i))
+}
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
