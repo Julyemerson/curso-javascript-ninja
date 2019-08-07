@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 var showTeamPosition = function(posicaoTime) {
     switch( posicaoTime ) {
-        case: 0
+        case 0: 
             console.log("O time que está em [POSIÇÃO]º lugar é o [NOME DO TIME].");
         break; 
     };
