@@ -14,6 +14,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = ['America-RN', 'ABC', 'Alecrim', 'Globo', 'Potiguar']
+
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -34,6 +35,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 var showTeamPosition = function(posicaoTime) {
     switch( posicaoTime ) {
+
         case 1:
             console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[0]+ ".");
         break;
