@@ -14,7 +14,7 @@ estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
 var teams = ['America-RN', 'ABC', 'Alecrim', 'Globo', 'Potiguar']
-
+console.log( '---------------------' +championship +'-----------------------------' );
 console.log( 'Times que estão participando do campeonato:', teams );
 
 /*
@@ -33,6 +33,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
+console.log( '---------------------' +championship +'-----------------------------' );
+
 var showTeamPosition = function(posicaoTime) {
     switch( posicaoTime ) {
         case 1:
@@ -57,26 +59,32 @@ var showTeamPosition = function(posicaoTime) {
 
 };
 
-console.log(showTeamPosition(6));
+console.log(showTeamPosition(1));
+
+console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
 
-
-
 var i = 0
 while( i < teams.length -1 ) {
     i++
-    console.log(showTeamPosition(i))
+    console.log(showTeamPosition(i)) 
 }
+console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
-// ?
+ var count2 = 20;
+ while(count2 < 31) {
+     console.log(count2)
+     count2++
+ };
+ console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
 Crie uma função chamada `convertToHex`, com as seguintes características:
@@ -90,9 +98,52 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-// ?
+var convertToHex = function( cor ){
+  
+  var cores = {
+      red:    '#ff0000', 
+      green:  '#008000',
+      blue:   '#0000ff',
+      yellow: '#FFFF00',
+      bronw:  '#A52A2A'
+};
+  
+  switch(cor) {
+    case 'red':
+         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.red + '.');
+    break;
+    case 'green':
+         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.green + '.');
+    break;
+    case 'blue':
+         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.blue + '.');
+    break;
+    case 'yellow':
+         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.yellow + '.');
+    break;
+    case 'brown':
+         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.bronw + '.');
+    break;
+    default: 
+         console.log('Não temos o equivalente hexadecimal para '+ cor +'.')
+    break; 
+  };
+
+};
+
+console.log(convertToHex('yellow'));
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+var cores = ['red','green','blue','yellow','orange','gray','magenta','ciano','brown']
+var countCor = 0;
+
+function randomNumbers() {
+   return Math.floor(Math.random() * 9) 
+}
+
+while(countCor < 10) {
+    countCor++
+    console.log(convertToHex(cores[randomNumbers()]));
+};
