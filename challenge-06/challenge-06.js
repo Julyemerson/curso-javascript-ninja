@@ -35,28 +35,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 console.log( '---------------------' +championship +'-----------------------------' );
 
-var showTeamPosition = function(posicaoTime) {
-    switch( posicaoTime ) {
-        case 1:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[0]+ ".");
-        break;
-        case 2:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[1]+ ".");
-        break; 
-        case 3:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[2]+ ".");
-        break;
-        case 4:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[3]+ ".");
-        break; 
-        case 5:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[4]+ ".");
-        break;
-        default: 
-            console.log("Não temos a informação do time que está nessa posição.")
-        break;
-        };
-
+var showTeamPosition = function(teamPosition) {
+    return 'O time que está em ' + teamPosition + 'º lugar é o '+ teams[teamPosition -1 ] +'.'
 };
 
 console.log(showTeamPosition(1));
@@ -67,12 +47,16 @@ console.log( '---------------------' +championship +'---------------------------
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
+console.log(showTeamPosition(1))
+console.log(showTeamPosition(2))
+console.log(showTeamPosition(3))
+console.log(showTeamPosition(4))
+console.log(showTeamPosition(5))
 
-var i = 0
-while( i < teams.length -1 ) {
-    i++
-    console.log(showTeamPosition(i)) 
-}
+
+
+
+
 console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
