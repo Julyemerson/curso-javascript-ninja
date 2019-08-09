@@ -52,12 +52,6 @@ console.log(showTeamPosition(3))
 console.log(showTeamPosition(4))
 console.log(showTeamPosition(5))
 
-
-var i = 0
-while( i < teams.length -1 ) {
-    i++
-    console.log(showTeamPosition(i)) 
-}
 console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
