@@ -35,6 +35,9 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 console.log( '---------------------' +championship +'-----------------------------' );
 var showTeamPosition = function(teamPosition) {
+    if(teamPosition < 1 || teamPosition > 5){
+        return 'Não temos a informação do time que está nessa posição.'
+    };
     return 'O time que está em ' + teamPosition + 'º lugar é o '+ teams[teamPosition -1 ] +'.'
 };
 
@@ -49,7 +52,7 @@ função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 console.log(showTeamPosition(1))
 console.log(showTeamPosition(2))
 console.log(showTeamPosition(3))
-console.log(showTeamPosition(4))
+console.log(showTeamPosition(9))
 console.log(showTeamPosition(5))
 
 console.log( '---------------------' +championship +'-----------------------------' );
@@ -60,8 +63,7 @@ repetição "while".
 */
  var count2 = 20;
  while(count2 < 31) {
-     console.log(count2)
-     count2++
+     console.log(count2++)
  };
  console.log( '---------------------' +championship +'-----------------------------' );
 
@@ -77,40 +79,41 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
-var convertToHex = function( cor ){
-  
-  var cores = {
-      red:    '#ff0000', 
-      green:  '#008000',
-      blue:   '#0000ff',
+var convertToHex = function( color ){
+    var hexa; 
+
+    var cores = {
+      red:    '#FF0000', 
+      green:  '#00FF00',
+      blue:   '#0000FF',
       yellow: '#FFFF00',
       bronw:  '#A52A2A'
 };
-  
-  switch(cor) {
+    
+  switch(color) {
     case 'red':
-         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.red + '.');
+         hexa = cores.red; 
     break;
     case 'green':
-         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.green + '.');
+         hexa = cores.green;
     break;
     case 'blue':
-         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.blue + '.');
+        hexa = cores.blue;
     break;
     case 'yellow':
-         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.yellow + '.');
+        hexa = cores.yellow;
     break;
     case 'brown':
-         console.log('O hexadecimal para a cor '+ cor +' é '+ cores.bronw + '.');
+        hexa = cores.bronw;
     break;
     default: 
-         console.log('Não temos o equivalente hexadecimal para '+ cor +'.')
-    break; 
+         return 'Não temos o equivalente hexadecimal para '+ color +'.';
+    
   };
 
+    return console.log('O hexadecimal para a cor '+ color +' é '+hexa+ '.')
 };
 
-console.log(convertToHex('yellow'));
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
