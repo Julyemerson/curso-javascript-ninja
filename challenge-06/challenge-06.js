@@ -34,7 +34,6 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 console.log( '---------------------' +championship +'-----------------------------' );
-
 var showTeamPosition = function(teamPosition) {
     return 'O time que está em ' + teamPosition + 'º lugar é o '+ teams[teamPosition -1 ] +'.'
 };
@@ -54,9 +53,11 @@ console.log(showTeamPosition(4))
 console.log(showTeamPosition(5))
 
 
-
-
-
+var i = 0
+while( i < teams.length -1 ) {
+    i++
+    console.log(showTeamPosition(i)) 
+}
 console.log( '---------------------' +championship +'-----------------------------' );
 
 /*
