@@ -35,28 +35,8 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 console.log( '---------------------' +championship +'-----------------------------' );
 
-var showTeamPosition = function(posicaoTime) {
-    switch( posicaoTime ) {
-        case 1:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[0]+ ".");
-        break;
-        case 2:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[1]+ ".");
-        break; 
-        case 3:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o " + teams[2]+ ".");
-        break;
-        case 4:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[3]+ ".");
-        break; 
-        case 5:
-            console.log("O time que está em "+ posicaoTime +"º lugar é o  " + teams[4]+ ".");
-        break;
-        default: 
-            console.log("Não temos a informação do time que está nessa posição.")
-        break;
-        };
-
+var showTeamPosition = function(positionTeam) {
+    return 'O time que está em '+ positionTeam +'º lugar é o '+teams[positionTeam]+'.'
 };
 
 console.log(showTeamPosition(1));
