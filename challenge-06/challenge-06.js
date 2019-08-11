@@ -34,17 +34,11 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 console.log( '---------------------' +championship +'-----------------------------' );
-<<<<<<< HEAD
-
-var showTeamPosition = function(positionTeam) {
-    return 'O time que está em '+ positionTeam +'º lugar é o '+teams[positionTeam]+'.'
-=======
 var showTeamPosition = function(teamPosition) {
     if(teamPosition < 1 || teamPosition > 5){
         return 'Não temos a informação do time que está nessa posição.'
     };
     return 'O time que está em ' + teamPosition + 'º lugar é o '+ teams[teamPosition -1 ] +'.'
->>>>>>> 7e676e528962f6245cc6d44f4d1ec3c225278252
 };
 
 console.log(showTeamPosition(1));
