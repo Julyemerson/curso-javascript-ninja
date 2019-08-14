@@ -11,15 +11,17 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
+var value1 = 10;
+var value2 = 20 
 
-console.log('A soma de 10 e 2 é igual a '+ sum(10, 2) +'.')
+console.log('A soma de '+ value1 +' e '+ value2+ ' é igual a '+ sum(value1, value2) +'.')
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
 
-console.log(sum.name)
+console.log('O nome da função que faz a soma é '+ sum.name)
 
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
@@ -57,33 +59,33 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 function calculator( operation ) {
     return function processor(operan1, operan2) {
 
-        var sum = operan1 + operan2;
-        var subtraction = operan1 - operan2;
-        var multiplication = operan1 * operan2;
-        var division = operan1 / operan2;
-        var mod = operan1 % operan2;
-
+        var result; 
 
         switch(operation){
             case '+':
-                 console.log('Resultado da operação: '+ operan1 +' '+ operation +' '+ operan2 +' = '+ sum +'.') 
+                result = operan1 + operan2; 
             break;
             case '-':
-                console.log('Resultado da operação: '+ operan1 +' '+ operation +' '+ operan2 +' = '+ subtraction +'.')
+                result = operan1 - operan2; 
             break;
             case '*':
-                console.log('Resultado da operação: '+ operan1 +' '+ operation +' '+ operan2 +' = '+ multiplication +'.')
+                result = operan1 * operan2;
             break;
             case '/':
-                console.log('Resultado da operação: '+ operan1 +' '+ operation +' '+ operan2 +' = '+ division +'.')
+                result = operan1 / operan2; 
             break; 
             case '%':
-                console.log('Resultado da operação: '+ operan1 +' '+ operation +' '+ operan2 +' = '+ mod +'.')
-            break;    
+                result = operan1 % operan2; 
+            break;
+            default: 
+                return 'Operação inválida.';
         }
+
+        return 'Resultado da operação: ' + operan1 + ' '+ operation +' '+ operan2 +' = '+ result +'.';
     };
 };
-console.log(calculator('/')(10,2))
+
+
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
