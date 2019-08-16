@@ -1,4 +1,4 @@
-(function(){
+(function (){
 /*
 Crie uma IIFE que envolva todo esse arquivo (inclusive esse comentário),
 e faça a indentação correta.
@@ -25,7 +25,16 @@ funcional, mas dessa vez, separando algumas responsabilidades.
 função receberá dois parâmetros e retornará a operação referente à sua
 propriedade, usando os valores passados por parâmetro.
 */
-// ?
+
+
+operation = {
+    '+': function( number1, number2 ) { return number1 + number2 },
+    '-': function( number1, number2 ) { return number1 - number2 },
+    '*': function( number1, number2 ) { return number1 * number2 },
+    '/': function( number1, number2 ) { return number1 / number2 },
+    '%': function( number1, number2 ) { return number1 % number2 }
+};
+
 
 /*
 Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -37,7 +46,10 @@ parâmetro a ela é válido, ou seja, se ele é igual a '+', '-', '*', '/' ou
 Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
-// ?
+function isOperatorValid(operator) {
+    
+}
+
 
 /*
 Agora vamos criar a calculadora.
@@ -73,7 +85,7 @@ Essa função deverá retornar a frase:
 /*
 Nossa calculadora está pronta! Agora vamos testá-la:
 PASSO 1:
-- Declare 3 variáveis: "number1" e "number2", iniciando com valor zero, e
+- Declare 3 variáveis: "number1" e "number2", i return number1 + number2 niciando com valor zero, e
 "operationSignal", sem valor por enquanto.
 */
 // ?
@@ -90,7 +102,7 @@ parâmetro a variável que recebeu o sinal da operação.
 PASSO 3:
 "sum" agora é uma função, e, se o sinal correto não foi passado para a
 função "calculator", "sum" será false. Certifique-se de que "sum" não é
-"false", e então atribua às variáveis "number1" e "number2", dois números
+"false", e então atribua às variáveis "number1" e "number2", d return number1 + number2 ois números
 que serão os operandos da operação de soma.
 Após isso, mostre no console o resultado da operação, passando dois
 parâmetros para o método "log" de "console":
