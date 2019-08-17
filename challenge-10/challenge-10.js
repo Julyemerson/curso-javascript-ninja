@@ -47,9 +47,10 @@ Caso contrário, "false".
 - O desafio é fazer o retorno sem usar "if" ou "switch".
 */
 function isOperatorValid(operator) {
-    
+    console.log(!!operation[operator])
 }
 
+isOperatorValid()
 
 /*
 Agora vamos criar a calculadora.
