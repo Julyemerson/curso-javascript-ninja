@@ -212,6 +212,15 @@
     Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
     a mensagem de erro será mostrada no console.
     */
-    // ?
+   operationSignal = 'x'
+   var mod = calculator(operationSignal); 
+   if( mod ) {
+       number1 = 10;
+       number2 = 100; 
 
+       console.log( showOperationMessage(operationSignal, number1, number2), mod(number1, number2) )
+   }
+   else {
+       console.log(showErrorMessage(operationSignal))
+   }
 })();
