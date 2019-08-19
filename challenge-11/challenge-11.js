@@ -12,9 +12,8 @@ Qual loop você deve usar para que essa mensagem seja mostrada no console?
 var once = false; 
 do {
  console.log('entrou ao menos uma vez!')
-}while(once === true){
+}while( once );
     
-};
 
 
 /*
@@ -24,7 +23,7 @@ para o nome, idade, peso e data de nascimento dessa pessoa.
 */
 var person = {
     name: 'Julyemerson',
-    age: 24,
+    age: 25,
     weight: 93,
     birthday: '14/03/1995'
 }
@@ -56,11 +55,11 @@ Após a função, mostrar a mensagem no console:
 'The person has more than 25 years old? [TRUE/FALSE]'
 */
 function moreThan(age) {
-  var test = age > person.age ? true : false
-  return 'The person has more than 25 years old? '+ test;     
+  return  person.age > age;     
 };
 
-console.log(moreThan(68))
+console.log( 'The person has more than 25 years old? '+ moreThan(24));
+
 
 /*
 Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -71,8 +70,8 @@ console.log( 'De 0 a 10:' );
 
 var numbers = []
 function loop() {
-    for(i = 1; i <= 20; i++) {
-        numbers.push(i)
+    for(i = 0; i <= 20; i++) {
+        numbers.push( i );
        if(i === 10) {
            break; 
        } 
@@ -92,8 +91,9 @@ numbers = [];
 function loop2() {
     for(i = 0; i <= 20; i++) {
         if(i % 2 === 0) {
-            numbers.push(i)
+            continue; 
         }
+        numbers.push( i )
     }
 }
 loop2()
