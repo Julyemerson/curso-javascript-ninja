@@ -93,36 +93,43 @@ Mostre no console todas as propriedades e valores de todos os livros,
 no formato abaixo:
     "[PROPRIEDADE]: [VALOR]"
 */
-for(i = 0; i < books.length; i++) {
-    for(j = 0; j < books.length; j++) {
-        console.log(books[i][j])
-    }
+function getpropertyAndValueOnBooks() {
+    for(i = 0; i < books.length; i++) {
+        console.log(' Name: '+books[i]['name'] +',  Pages: '+ books[i]['pages'])
+        };
 }
+
+getpropertyAndValueOnBooks()
+
 
 /*
 Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
 seu nome. Adicione seu nome completo no array.
 */
-// ?
+var name = 'julyemerson'
+var arr = name.split(''); 
+console.log(arr)
+
+
 console.log( '\nMeu nome é:' );
 
 /*
 Juntando todos os itens do array, mostre no console seu nome.
 */
-// ?
+console.log(arr.join(''));
 
 console.log( '\nMeu nome invertido é:' );
 
 /*
 Ainda usando o objeto acima, mostre no console seu nome invertido.
 */
-// ?
+console.log(arr.reverse())
 
 console.log( '\nAgora em ordem alfabética:' );
 /*
 Mostre todos os itens do array acima, odenados alfabéticamente.
 */
-// ?
+console.log(arr.reverse())
 
 
 })();
