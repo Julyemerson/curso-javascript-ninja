@@ -213,12 +213,12 @@
     a mensagem de erro será mostrada no console.
     */
    operationSignal = 'x'
-   var mod = calculator(operationSignal); 
-   if( mod ) {
+   var invalid = calculator(operationSignal); 
+   if( invalid ) {
        number1 = 10;
        number2 = 100; 
 
-       console.log( showOperationMessage(operationSignal, number1, number2), mod(number1, number2) )
+       console.log( showOperationMessage(operationSignal, number1, number2), invalid(number1, number2) )
    }
    else {
        console.log(showErrorMessage(operationSignal))
