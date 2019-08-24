@@ -65,7 +65,9 @@ var nordeste = ['Rio Grande do Norte', 'Paraiba', 'Pernambuco','Ceará', 'Maranh
 Mostre no console os estados do nordeste.
 */
 console.log( '\nEstados do Nordeste:' );
-
+nordeste.forEach(index => {
+    brasil.push(index)
+});
 console.log(nordeste)
 
 
@@ -129,7 +131,7 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
+
 
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
