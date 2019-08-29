@@ -59,7 +59,15 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    // ?
+    var reduce = justMod2Or3.reduce(function(acumulado, atual,index, array){
+        if(atual === 10){
+            atual++ 
+        };
+        acumulado++
+        return acumulado * atual;
+    },0)
+
+    console.log(reduce)
 
     /*
     Faça o mesmo cálculo passado acima, mas começando do último item para o
@@ -67,7 +75,13 @@
     console.
     */
     console.log( '\nOperation 2:' );
-    // ?
+    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array){
+        atual === 10 ? atual++ : ''; 
+        acumulado++
+        return acumulado * atual 
+    },0)
+
+    console.log(operation2)
 
     /*
     Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -78,8 +92,15 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    // ?
+    var name = ['c', 'a', 'l', 'e', 'b']; 
+    name.reduce(function(acumulado, atual, index, array){
+        if(index % 2 === 0) {
+            atual[index] = 'p'
+        }
+        return acumulado
+    },0)
 
+     console.log(name)       
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
     e atribuirá o seu nome invertido (usando o array criado acima).
