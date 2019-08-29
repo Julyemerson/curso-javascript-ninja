@@ -59,8 +59,15 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    // ?
+    var reduce = justMod2Or3.reduce(function(acumulado, atual, index, array){
+        if (array.length -1) {
+           array[atual] = array[atual] + 1
+        }  
+        return acumulado + atual
+        
+    },0)
 
+    console.log(reduce)
     /*
     Faça o mesmo cálculo passado acima, mas começando do último item para o
     primeiro. O nome da variável deve ser operation2. Mostre o resultado no
