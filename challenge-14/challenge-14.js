@@ -59,12 +59,12 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    var reduce = justMod2Or3.reduce(function(acumulado, atual, index, array){
-        if (array.length -1) {
-           array[atual] = array[atual] + 1
-        }  
-        return acumulado + atual
-        
+    var reduce = justMod2Or3.reduce(function(acumulado, atual,index, array){
+        if(atual === 10){
+            atual++ 
+        };
+        acumulado++
+        return acumulado * atual;
     },0)
 
     console.log(reduce)
@@ -74,7 +74,13 @@
     console.
     */
     console.log( '\nOperation 2:' );
-    // ?
+    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array){
+        atual === 10 ? atual++ : ''; 
+        acumulado++
+        return acumulado * atual 
+    },0)
+
+    console.log(operation2)
 
     /*
     Crie um array chamado `name`. Cada elemento desse array deve ser uma sílaba
@@ -85,20 +91,30 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    // ?
+    var name = ['c', 'a', 'l', 'e', 'b']; 
+    name.reduce(function(acumulado, atual, index, array){
+        if(index % 2 == 0 ) {
+            array[index] = 'p'
+        }
+        return acumulado
+    },0)
 
+     console.log(name)       
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    // ?
+    var inversedName = name.reduce(function(acumulado, atual, index, array){
+       
+    })
 
+    console.log(inversedName)
     /*
     Mostre no console o array `numberObjects`.
     */
     console.log( '\nNumber objects' );
-    // ?
+    console.log(numberObjects)
 
     /*
     Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -110,8 +126,12 @@
     o que acontece ;)
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
-    // ?
 
+    console.log(numberObjects.indexOf({number: 2}))
+   
+    
+    
+    
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
