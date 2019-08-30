@@ -47,25 +47,19 @@
     Mostre o resultado no console.
     */
     console.log( '\nOperation:' );
-    var reduce = justMod2Or3.reduce(function(acumulado, atual,index, array){
-        if(atual === 10){
-            atual++ 
-        };
-        acumulado++
-        return acumulado * atual;
+    var operation = justMod2Or3.reduce(function(acumulado, atual){        
+        return (acumulado + 1) * atual;
     },0)
 
-    console.log(reduce)
+    console.log(operation)
     /*
     Faça o mesmo cálculo passado acima, mas começando do último item para o
     primeiro. O nome da variável deve ser operation2. Mostre o resultado no
     console.
     */
     console.log( '\nOperation 2:' );
-    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual, index, array){
-        atual === 10 ? atual++ : ''; 
-        acumulado++
-        return acumulado * atual 
+    var operation2 = justMod2Or3.reduceRight(function(acumulado, atual){
+        return (acumulado + 1) * atual 
     },0)
 
     console.log(operation2)
@@ -79,25 +73,23 @@
     falada, como se você estivesse falando em código xD
     */
     console.log( '\nSeu nome na língua do "P":' );
-    var name = ['c', 'a', 'l', 'e', 'b']; 
-    name.reduce(function(acumulado, atual, index, array){
-        if(index % 2 == 0 ) {
-            array[index] = 'p'
-        }
-        return acumulado
-    },0)
+    var name = ['Jul', 'yem', 'ers', 'on']; 
+    reduceP = name.reduce(function(acumulado, atual){
+        return acumulado + 'P' + atual
+    },'')
 
-     console.log(name)       
+     console.log(reduceP)       
     /*
     Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
     e atribuirá o seu nome invertido (usando o array criado acima).
     */
     console.log( '\nInversed Name:' );
-    var inversedName = name.reduce(function(acumulado, atual, index, array){
-       
+    var inversedName = name.reduceRight(function(acumulado, atual){
+       return acumulado + atual
     })
-
+    // name.reverse().join('') tbm pode ser usado para fazer esse procedimento.
     console.log(inversedName)
+    
     /*
     Mostre no console o array `numberObjects`.
     */
@@ -115,26 +107,31 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
 
-    var some = numberObjects.some(function(item){
-        return item.number == 2
-    })
+    if(numberObjects.indexOf({number: 2}) > -1) {
+        console.log('Existe um objeto { number: 2 } em numberObjects!')
+    }else{
+        console.log('Não existe um objeto { number: 2 } em numberObjects :(')
+    }
    
-    console.log(some ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(' )
-    
-    
-    
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    // ?
-
+    
+    if(numberObjects.lastIndexOf({number: 2}) > -1) {
+        console.log('Existe um objeto { number: 2 } em numberObjects!')
+    }else{
+        console.log('Não existe um objeto { number: 2 } em numberObjects :(')
+    }
+   
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    if(Array.isArray(justMod2Or3)) {
+        console.log(justMod2Or3.toString())
+    }
 
 })();
