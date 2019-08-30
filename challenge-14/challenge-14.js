@@ -127,11 +127,11 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
 
-    console.log(numberObjects.indexOf({number: 2}))
-   
-    
-    
-    
+   var existe = numberObjects.some(function(item, i){
+    return item.number === 2 
+   })
+
+   console.log(existe ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
@@ -144,6 +144,6 @@
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    console.log(Array.isArray(justMod2Or3) ? justMod2Or3.toString() : ' ' )
 
 })();
