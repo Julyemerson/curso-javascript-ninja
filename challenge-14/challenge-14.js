@@ -13,19 +13,11 @@
     */
     console.log( 'Number Objects Array:' );
     var numberObjects = []; 
-<<<<<<< HEAD
-    for(var i = 1; i <= 10; i++) {
-        numberObjects.push({number: i});
-    }   
-    console.log(numberObjects)
-    
-=======
     for (var i = 1; i <= 10; i++) {
         numberObjects.push({number: i});
         
     }
     console.log(numberObjects)
->>>>>>> b24bb58b7737ff11bc68a57154998066c57bd676
     /*
     Crie um array chamado `justNumbers`, que terá como elementos somente os
     números do array criado acima. Mostre esse novo array no console.
@@ -33,15 +25,9 @@
     console.log( '\nJust Numbers:' );
     var justNumbers = numberObjects.map(function(item){
         return item.number
-<<<<<<< HEAD
-    })
-
-    console.log(justNumbers)
-=======
     });
     console.log(justNumbers)
     
->>>>>>> b24bb58b7737ff11bc68a57154998066c57bd676
     /*
     Crie um novo array chamado `justMod2Or3`, que receberá do array criado acima
     somente os números que forem divisíveis por 2 ou 3. Mostre esse novo array
@@ -49,11 +35,7 @@
     */
     console.log( '\nJust module of division by 2 or 3:' );
     var justMod2Or3 = justNumbers.filter(function(item){
-<<<<<<< HEAD
-        return item % 2 === 0 || item % 3 === 0 ;
-=======
         return item % 2 === 0 || item % 3 === 0
->>>>>>> b24bb58b7737ff11bc68a57154998066c57bd676
     })
     console.log(justMod2Or3)
     /*
@@ -125,20 +107,12 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
 
-<<<<<<< HEAD
-   var existe = numberObjects.some(function(item, i){
-    return item.number === 2 
-   })
-
-   console.log(existe ? 'Existe um objeto { number: 2 } em numberObjects!' : 'Não existe um objeto { number: 2 } em numberObjects :(')
-=======
     if(numberObjects.indexOf({number: 2}) > -1) {
         console.log('Existe um objeto { number: 2 } em numberObjects!')
     }else{
         console.log('Não existe um objeto { number: 2 } em numberObjects :(')
     }
    
->>>>>>> b24bb58b7737ff11bc68a57154998066c57bd676
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
@@ -156,12 +130,8 @@
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-<<<<<<< HEAD
-    console.log(Array.isArray(justMod2Or3) ? justMod2Or3.toString() : ' ' )
-=======
     if(Array.isArray(justMod2Or3)) {
         console.log(justMod2Or3.toString())
     }
->>>>>>> b24bb58b7737ff11bc68a57154998066c57bd676
 
 })();
