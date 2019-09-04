@@ -16,7 +16,14 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-// ?
+var name = 'Julyemerson' ;
+function percorreNome(){
+    for(var i = 0; i< name.length; i++){
+        console.log(name.charAt(i)+ ' é a '+ (i+ 1) +'ª letra do meu nome.')
+    }
+}
+
+percorreNome()
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
