@@ -38,7 +38,14 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+var fullName = 'thalyta-apuhena-oliveira-almeida' 
+var nameSplit = fullName.split('-')
+for(var i = 0; i < nameSplit.length; i++) {
+   console.log(nameSplit[i][0].toUpperCase() + nameSplit[i].slice(1))
+}
+console.log(fullName)
+
+//acredito que dara certo usando o comendo replace
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
