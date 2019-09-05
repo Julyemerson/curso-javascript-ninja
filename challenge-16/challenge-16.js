@@ -40,10 +40,11 @@ console.log para cada formato.
 console.log( '\nNome convertido à partir de um slug:' );
 var fullName = 'thalyta-apuhena-oliveira-almeida' 
 var nameSplit = fullName.split('-')
+var normalName;
 for(var i = 0; i < nameSplit.length; i++) {
-   console.log(nameSplit[i][0].toUpperCase() + nameSplit[i].slice(1))
+   normalName += nameSplit[i][0].toUpperCase() + nameSplit[i].slice(1)
 }
-console.log(fullName)
+console.log(normalName)
 
 //acredito que dara certo usando o comendo replace
 
