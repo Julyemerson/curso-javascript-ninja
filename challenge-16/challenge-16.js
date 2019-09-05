@@ -38,7 +38,7 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-var fullName = 'julyemerson-bento-leonizio' 
+var fullName = 'thalyta-apuhena-de-oliveira-almeida' 
 var nameSplit = fullName.split('-')
 var normalName = '';
 var aux1;
@@ -54,7 +54,6 @@ console.log('SlugName: ' + fullName)
 
 console.log('NormalName: ' + normalName)
 
-//acredito que dara certo usando o comendo replace
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -66,8 +65,15 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
+var amigos = ['João', 'Maria', 'Roberto','Pedro', 'Marcos','julyemerson']
+var newAmigos = amigos.reduce(function(acumulado, atual, index){
+    if(index === amigos.length - 1){
+        return acumulado +' e '+  atual
+    }
+   return acumulado +', '+  atual
+})
 
+console.log(newAmigos)
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
