@@ -18,7 +18,7 @@ E assim por diante, até a última.
 console.log( 'As letras do seu nome:' );
 var name = 'Julyemerson' ;
 function percorreNome(){
-    for(var i = 0; i< name.length; i++){
+    for(var i = 0, len= name.length; i < len; i++){
         console.log(name.charAt(i)+ ' é a '+ (i+ 1) +'ª letra do meu nome.')
     }
 }
@@ -39,20 +39,14 @@ console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
 var fullName = 'thalyta-apuhena-de-oliveira-almeida' 
-var nameSplit = fullName.split('-')
-var normalName = '';
-var aux1;
-var aux2; 
+var nameSplit = fullName.split('-').map(function(name){
+    return name.charAt(0).toUpperCase() + name.slice(1); 
+}).join(' ')
 
-for(var i = 0; i < nameSplit.length; i++) {
-   aux1 = nameSplit[i][0].toUpperCase() 
-   aux2 = nameSplit[i].slice(1)  + ' '; 
-   normalName += aux1 + aux2
-}
 
 console.log('SlugName: ' + fullName)
 
-console.log('NormalName: ' + normalName)
+console.log('NormalName: ' + nameSplit)
 
 
 /*
