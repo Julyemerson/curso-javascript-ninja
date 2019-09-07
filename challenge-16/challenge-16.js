@@ -58,25 +58,24 @@ O resultado final deve ficar mais ou menos assim:
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
 */
+
 console.log( '\nMeus amigos:' );
 var amigos = ['João', 'Maria', 'Roberto','Pedro', 'Marcos','julyemerson']
 var newAmigos = amigos.reduce(function(acumulado, atual, index){
-    if(index === amigos.length - 1){
-        return acumulado +' e '+  atual
-    }
-   return acumulado +', '+  atual
-})
+    var separator = index === amigos.length - 1 ? ' e ' : ', '
+        return acumulado + separator +  atual
+}).concat(' são meus amigos')
 
 console.log(newAmigos)
+
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-var replace = 'roberto'; 
-var newReplace = replace.slice(2,7).replace('o', 'a')
-var final = replace.slice(0,2) + newReplace
-console.log(final.charAt(0).toUpperCase() + final.slice(1)  )
+var roberto = 'Roberto'; 
+console.log(roberto.replace('to', 'ta'))
+
 
 
 /*
@@ -97,15 +96,15 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-var myName = 'julyemerson'
+var myName = 'Julyemerson';
 var aux = 0;  
 var intercalada = '';
-for(var i = 0; i < myName.length; i++){
+for(var i = 0, len = myName.length; i < len; i++){
     ++aux
     if(aux % 2 == 1 ){
         intercalada += myName[i].toUpperCase() 
     }else {
-        intercalada += myName[i]
+        intercalada += myName[i].toLocaleLowerCase()
     }
 }
 console.log(intercalada)
