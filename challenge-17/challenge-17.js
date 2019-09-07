@@ -59,8 +59,8 @@ Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
 console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-console.log(text.replace( /O Centauro de Luvas/ , function(captura) {
-    return captura.toUpperCase()
+console.log(text.replace( /O Centauro de Luvas/ , function(capture) {
+    return capture.toUpperCase()
 } ))
 
 /*
@@ -78,9 +78,18 @@ Use um console.log para cada mês, usando a frase:
 console.log( '\nMeses representados por números:' );
 var month = ''; 
 function getMonthNumber(monthName){
-    
+    var meses = {
+        'março': 'O mês de Março é representado pelo número 03',
+        'setembro': 'O mês de Setembro é representado pelo número 09',
+        'dezembro': 'O mês de dezembro é representado pelo número 12'
+    }
+
+    console.log(meses[monthName]) 
 }
 
+getMonthNumber('março')
+getMonthNumber('setembro')
+getMonthNumber('dezembro')
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
