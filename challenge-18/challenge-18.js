@@ -6,7 +6,6 @@
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
 
-
 /*
 Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
 retorne esse CPF limpo (somente os números).
@@ -18,7 +17,20 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+function cleanCPF(cpf){
+    var regexCpf = /\W+|x/g
+    var clean; 
+
+    clean = cpf.replace(regexCpf, '')
+
+    return clean
+
+}
+
+console.log(cleanCPF('049-214 3421-1'))
+console.log(cleanCPF('210.458.522-05'))
+console.log(cleanCPF('735 500 794 - 22'))
+console.log(cleanCPF('101.123-131x32'))
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -26,8 +38,12 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
 
+var cpfLimpo = cleanCPF('049-214 3421-1');
+var formatCpf = /(\d{3})(\d{3})(\d{3})(\d{2})/g;
+
+
+console.log(cpfLimpo.replace(formatCpf, '$1.$2.$3-$4'))
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
 usando o mínimo de caracteres possíveis na regex.
