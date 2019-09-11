@@ -76,20 +76,21 @@ Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
 console.log( '\nMeses representados por números:' );
-var month = ''; 
+
 function getMonthNumber(monthName){
+
     var meses = {
-        'março': 'O mês de Março é representado pelo número 03',
-        'setembro': 'O mês de Setembro é representado pelo número 09',
-        'dezembro': 'O mês de dezembro é representado pelo número 12'
+        'março': '03',
+        'setembro': '09',
+        'dezembro': '12'
     }
 
-    console.log(meses[monthName]) 
+    return meses[monthName] 
 }
 
-getMonthNumber('março')
-getMonthNumber('setembro')
-getMonthNumber('dezembro')
+console.log('O mês de Março é representado pelo número ' + getMonthNumber('março'))
+console.log('O mês de Setembro é representado pelo número ' + getMonthNumber('setembro'))
+console.log('O mês de Dezembro é representado pelo número ' + getMonthNumber('dezembro'))
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -100,7 +101,17 @@ Com o que vimos até agora, você consegue fazer :D
 Mostre a regex no console.
 */
 console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-// ?
+var regexDate = /\d/g
+var anos = text.match(/(\d\d)(\d\d)/g)
+var dias = text.match(/(\d de)/g)
+var junho = text.match(/(de junho)/g)
+var julho = text.match(/(de julho)/g)
+
+
+console.log(anos)
+console.log(dias)
+console.log(junho)
+console.log(julho)
 
 /*
 Agora crie a função que irá fazer o replace dos dados. A função será chamada
