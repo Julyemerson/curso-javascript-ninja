@@ -88,9 +88,9 @@
     */
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
     var tagsRegex = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-    var regexOnTabs =  '(<div>|<\/div>)|(<ul>|<\/ul>)|(<span>|<\/span>)';
+    var regexOnTabs =  /(<div>|<\/div>)|(<ul>|<\/ul>)|(<span>|<\/span>)/g;
 
-     console.log(tagsRegex.replace(regexOnTabs, '$1.$2.$3-$4'))   
+     console.log(tagsRegex.match(regexOnTabs))   
     /*
     Vamos complicar um pouco agora :D
 
