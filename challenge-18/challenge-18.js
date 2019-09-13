@@ -17,20 +17,17 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
+    var cpfs = ['049-214 3421-1','210.458.522-05','735 500 794 - 22','101.123-131x32']
+
     function cleanCPF(cpf){
-        var regexCpf = /\W+|\D/g
-        var clean; 
-
-        clean = cpf.replace(regexCpf, '')
-
-        return clean
-
+        var regexCpf = /\D/g
+        return cpf.replace(regexCpf, '')
     }
+    
+    cpfs.forEach(element => {
+        console.log(cleanCPF(element))
+    });
 
-    console.log(cleanCPF('049-214 3421-1'))
-    console.log(cleanCPF('210.458.522-05'))
-    console.log(cleanCPF('735 500 794 - 22'))
-    console.log(cleanCPF('101.123-131x32'))
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -56,11 +53,10 @@
     O resultado deve ser:
     ["junho", "julho"]
     */
-    var match = /junho|julho/g;
-    var phrase = 'Os meses de janeiro, junho e julho começam com a letra j';
-
-    console.log(  '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-    console.log(phrase.match(match))
+    console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
+    console.log('Os meses de janeiro, junho e julho começam com a letra j'.match(
+        /ju[nl]ho/g)
+        )
     
     /*
     Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -72,10 +68,10 @@
     ["<div>", "<section>", "<blockquote>"]
     */
     console.log( '\nMatch com a abertura de uma tag HTML:' );
-    var tags = '<div><section><blockquote>Texto <img /></blockquote></section></div>'
-    var regexTabs = /<[^>/]\w*>/g; 
-
-    console.log(tags.match(regexTabs))
+    console.log('<div><section><blockquote>Texto <img /></blockquote></section></div>'.match(
+        /<\w+>/g
+    ))
+    
 
     /*
     Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -87,10 +83,10 @@
     ["<li></li>", "<li></li>", "<span></span>"]
     */
     console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-    var tagsRegex = '<div><ul><li></li><li></li><li><span></span></li></ul></div>';
-    var regexOnTabs =  /(<div>|<\/div>)|(<ul>|<\/ul>)|(<span>|<\/span>)/g;
+    console.log( '<div><ul><li></li><li></li><li><span></span></li></ul></div>'.match(
+        /<\w+><\/\w+>/g
+    ) );
 
-     console.log(tagsRegex.match(regexOnTabs))   
     /*
     Vamos complicar um pouco agora :D
 
@@ -114,6 +110,7 @@
     corretas, para depois aplicar no código ;)
     */
     console.log( '\nFazer replace dos textos das tags:' );
-    // ?
-
+    console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'.replace(
+        /<(\w+)>([^<]+)<\/\w+>/g, '<$1> O texto dentro da tag "$1" é "$2"</$1>\n'
+    ))
 })()
