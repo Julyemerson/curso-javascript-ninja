@@ -86,7 +86,22 @@ para exemplificar.
 */
 var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
 console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
-// ?
+function hasClass(markup, cssClass){
+    var findClass = new RegExp('[\\]?[\'\"]\\w+\\s?\\w+[\\]?[\'\"]' + cssClass, 'gm')
 
+    console.log(findClass)
+
+    return findClass.test(markup) + ' para a classe ' + cssClass
+}
+
+console.log(hasClass(markup, 'container'))
+console.log(hasClass(markup, 'date'))
+console.log(hasClass(markup, 'text'))
+console.log(hasClass(markup, 'excerpt'))
+console.log(hasClass(markup, 'main'))
+
+
+
+
+//console.log(regexTest.test('</span>'))
 })()
-
