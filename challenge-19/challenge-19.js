@@ -27,7 +27,7 @@ linha, independente de quantos caracteres de número estiverem juntos.
 no console:
 */
 console.log( 'Regex para números usando o construtor:' );
-var justNumbersRegex = new RegExp('\\d+[\\s]', 'gm')
+var justNumbersRegex = new RegExp('^\\d+', 'gm')
 
 console.log(justNumbersRegex)
 /*
@@ -48,7 +48,7 @@ linha, independente de quantos caracteres de número estiverem juntos.
 Mostre a regex no console:
 */
 console.log( '\nRegex para números somente no final das linhas:' );
-var numbersAtTheEnd = new RegExp('\\d+[\\s\\s]', 'gm')
+var numbersAtTheEnd = new RegExp('\\d+$', 'gm')
 console.log(numbersAtTheEnd)
 
 /*
@@ -87,11 +87,17 @@ para exemplificar.
 var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
 console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
 function hasClass(markup, cssClass){
-    if(markup.test() === true){
-        
-    }
-    return true | false 
+    var regex = new RegExp('class=["\'].*' + cssClass + '.*', 'gm')
+    return regex.test( markup )
 }
 
-})()
+var classes = ['container', 'text', 'date', 'excerpt', 'main'];
+classes.forEach(cssClass => {
+    console.log(hasClass(markup, cssClass) + ' Para a ' + cssClass )
+});
 
+
+
+
+//console.log(regexTest.test('</span>'))
+})()
