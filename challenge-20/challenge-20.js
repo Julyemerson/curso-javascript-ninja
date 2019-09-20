@@ -1,3 +1,5 @@
+(function challenge20(win, doc){
+    'use strict';
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -105,3 +107,5 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+
+})(window, document)
