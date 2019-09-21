@@ -54,6 +54,7 @@
     */
     var $button = doc.querySelector('button[type="submit"]');
     
+    
     /*
     Preencha os campos de "Nome" e "Email" que estão no documento com os valores
     entrados pelo usuário.
@@ -86,20 +87,27 @@
         - "Não enviado."
     */
     
-    $button = addEventListener('click', function(event){
-        event.preventDefault(); 
+    $button.addEventListener('click', function(event){
+       event.preventDefault(); 
+        
+       if($inputUsername.value == ''){
+           alert('Preencha o nome do usuario'); 
+       };
+       if($inputEmail.value == ''){
+           alert('Preencha o email ');
+       };
+       if($message.value.length < 5){
+           alert('preencha a mensagem')
+       };
 
-        switch(!$inputUsername.value || !$inputEmail.value || !$message.value){
-            case !$inputUsername.value:
-                alert('Preencha o nome do usuario');
-            break;
-            case !$inputEmail.value:
-                alert('Preencha o email');
-            break;
-            case !$message.value:
-                alert('Digite a mensagem')
-            break;
-        }
+       if(isValidEmail($inputEmail.value) == false){
+           alert('Digite um email valido')
+       };
+       
+       var ok = confirm('Tem certeza que deseja enviar o formulário?'); 
+
+       ok ? alert('enviado com sucesso') : alert('não enviado');
+
     },false)
 
     /*
@@ -128,6 +136,11 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+
+    function isValidEmail(email){
+        var validEmail = new RegExp('(^[\\w+.]+)(@[\\w]+)(\\.\\w{2,})(?:\\.[a-z]{2})?$')
+        return validEmail.test(email)
+    }
+
 
 })(window, document)

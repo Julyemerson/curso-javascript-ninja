@@ -17,17 +17,17 @@
     da utilização.
     */
 
-    /*
-    - Usando o construtor de Regex, crie uma regex que case somente com números
-    no início da string. O match precisa ser feito para todas as
-    correspondências de qualquer string, não somente para a primeira, ainda que
-    esta tenha muitas linhas, deve sempre casar com números no início de cada
-    linha, independente de quantos caracteres de número estiverem juntos.
-    - Atribua essa regex à uma variável chamada `justNumbersRegex` e mostre-a
-    no console:
-    */
-    console.log( 'Regex para números usando o construtor:' );
-    var justNumbersRegex = new RegExp('^\\d+', 'gm')
+/*
+- Usando o construtor de Regex, crie uma regex que case somente com números
+no início da string. O match precisa ser feito para todas as
+correspondências de qualquer string, não somente para a primeira, ainda que
+esta tenha muitas linhas, deve sempre casar com números no início de cada
+linha, independente de quantos caracteres de número estiverem juntos.
+- Atribua essa regex à uma variável chamada `justNumbersRegex` e mostre-a
+no console:
+*/
+console.log( 'Regex para números usando o construtor:' );
+var justNumbersRegex = new RegExp('^\\d+', 'gm')
 
     console.log(justNumbersRegex)
     /*
@@ -39,17 +39,17 @@
     console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
     console.log(text.match(justNumbersRegex))
 
-    /*
-    - Crie uma regex que case com números no final de uma string. Atribua a
-    regex à uma variável chamada `numbersAtTheEnd`.
-    - A regex deve casar com todas as correspondências de qualquer string, ainda
-    que esta tenha muitas linhas, deve sempre casar com números no fim de cada
-    linha, independente de quantos caracteres de número estiverem juntos.
-    Mostre a regex no console:
-    */
-    console.log( '\nRegex para números somente no final das linhas:' );
-    var numbersAtTheEnd = new RegExp('\\d+$', 'gm')
-    console.log(numbersAtTheEnd)
+/*
+- Crie uma regex que case com números no final de uma string. Atribua a
+regex à uma variável chamada `numbersAtTheEnd`.
+- A regex deve casar com todas as correspondências de qualquer string, ainda
+que esta tenha muitas linhas, deve sempre casar com números no fim de cada
+linha, independente de quantos caracteres de número estiverem juntos.
+Mostre a regex no console:
+*/
+console.log( '\nRegex para números somente no final das linhas:' );
+var numbersAtTheEnd = new RegExp('\\d+$', 'gm')
+console.log(numbersAtTheEnd)
 
     /*
     Verifique se a regex acima casa com o texto na variável `otherText`,
@@ -61,47 +61,39 @@
     console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
     console.log(otherText.match(numbersAtTheEnd))
 
-    /*
-    Vamos criar um método que vai testar se uma classe CSS existe em uma
-    marcação HTML.
-    - Primeiro, crie uma função chamada `hasClass`;
-    - Essa função receberá dois parâmetros: o primeiro chamado `markup`, que
-    será a marcação HTML testada, e o segundo `cssClass`, que será a classe que
-    iremos testar;
-    - A função deve retornar `true` se a classe existir na marcação e `false`
-    caso contrário;
-    - A marcação usada para testar deve ser a que está na variável `markup`
-    abaixo;
-    - Não altere a marcação na variável markup!
-    - Faça o teste, mostrando no console o resultado para as seguintes classes:
-    - "container", "text", "date", "excerpt" e "main".
-    - O console deve exibir a frase:
-    "[RESULTADO] para a classe [CLASSE]"
-    - Ex. de resposta:
-    "true para a classe container"
-    - Teste uma classe por vez (um console.log por classe).
-    - Lembrando que a função deve funcionar para qualquer marcação HTML e para
-    qualquer classe que for testada. Os dados passados no exercício são somente
-    para exemplificar.
-    */
-    var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
-    console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
-    function hasClass(markup, cssClass){
-        var findClass = new RegExp('[\\]?[\'\"]\\w+\\s?\\w+[\\]?[\'\"]' + cssClass, 'gm')
+/*
+Vamos criar um método que vai testar se uma classe CSS existe em uma
+marcação HTML.
+- Primeiro, crie uma função chamada `hasClass`;
+- Essa função receberá dois parâmetros: o primeiro chamado `markup`, que
+será a marcação HTML testada, e o segundo `cssClass`, que será a classe que
+iremos testar;
+- A função deve retornar `true` se a classe existir na marcação e `false`
+caso contrário;
+- A marcação usada para testar deve ser a que está na variável `markup`
+abaixo;
+- Não altere a marcação na variável markup!
+- Faça o teste, mostrando no console o resultado para as seguintes classes:
+- "container", "text", "date", "excerpt" e "main".
+- O console deve exibir a frase:
+"[RESULTADO] para a classe [CLASSE]"
+- Ex. de resposta:
+"true para a classe container"
+- Teste uma classe por vez (um console.log por classe).
+- Lembrando que a função deve funcionar para qualquer marcação HTML e para
+qualquer classe que for testada. Os dados passados no exercício são somente
+para exemplificar.
+*/
+var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
+console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
+function hasClass(markup, cssClass){
+    var regex = new RegExp('class=["\'].*' + cssClass + '.*', 'gm')
+    return regex.test( markup )
+}
 
-        console.log(findClass)
+var classes = ['container', 'text', 'date', 'excerpt', 'main'];
+classes.forEach(cssClass => {
+    console.log(hasClass(markup, cssClass) + ' Para a ' + cssClass )
+});
 
-        return findClass.test(markup) + ' para a classe ' + cssClass
-    }
-
-    console.log(hasClass(markup, 'container'))
-    console.log(hasClass(markup, 'date'))
-    console.log(hasClass(markup, 'text'))
-    console.log(hasClass(markup, 'excerpt'))
-    console.log(hasClass(markup, 'main'))
-
-
-
-
-    //console.log(regexTest.test('</span>'))
 })()
