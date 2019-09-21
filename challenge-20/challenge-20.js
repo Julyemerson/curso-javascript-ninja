@@ -16,13 +16,9 @@
     nome, `username` deve receber "Desconhecido".
     Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
     */
-    var username = prompt('Digite seu Nome: ');
-
-    if(!username){
-        username = 'Desconhecido';
-    };
-
-    alert('Bem vindo ' + username);
+    var username = prompt('Digite seu Nome: ') || 'Desconhecido'; 
+    //operação curto circuito atribui o 'desconhecido ' quando o primeiro teste for false
+    alert('Bem vindo ' + username + '!');
 
     /*
     Agora, pergunte ao usuário "Qual o seu e-mail?", atribuindo o resultado à
@@ -90,23 +86,22 @@
     $button.addEventListener('click', function(event){
        event.preventDefault(); 
         
-       if($inputUsername.value == ''){
-           alert('Preencha o nome do usuario'); 
-       };
-       if($inputEmail.value == ''){
-           alert('Preencha o email ');
-       };
-       if($message.value.length < 5){
-           alert('preencha a mensagem')
-       };
-
-       if(isValidEmail($inputEmail.value) == false){
-           alert('Digite um email valido')
-       };
+        if(!$inputUsername.value)
+          return alert('Preencha o nome do usuario'); 
        
-       var ok = confirm('Tem certeza que deseja enviar o formulário?'); 
+        if(!$inputEmail.value)
+          return alert('Preencha o email ');
 
-       ok ? alert('enviado com sucesso') : alert('não enviado');
+        if(!isValidEmail($inputEmail.value))
+        return alert('Digite um email valido');
+       
+        if(!$message.value)
+        return alert('preencha a mensagem');
+
+        if( !confirm('Tem certeza que deseja enviar o formulario?') )
+            return alert(' Não Enviado!');
+       
+        alert('Enviado com sucesso!');
 
     },false)
 
@@ -138,8 +133,11 @@
     */
 
     function isValidEmail(email){
-        var validEmail = new RegExp('(^[\\w+.]+)(@[\\w]+)(\\.\\w{2,})(?:\\.[a-z]{2})?$')
-        return validEmail.test(email)
+        //var validEmail = new RegExp('(^[\\w+.]+)(@[\\w]+)(\\.\\w{2,})(?:\\.[a-z]{2})?$')
+        //return validEmail.test(email)
+
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email)
+        
     }
 
 
