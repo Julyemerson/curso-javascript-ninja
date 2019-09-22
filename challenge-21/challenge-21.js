@@ -23,15 +23,25 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     var $inputText = doc.querySelector('[data-js="input"]');
     var temp; 
 
-    //  function timer(){
-    //     setInterval(seconds, 1000)
-    //  }
+     function timer(){
+       temp =  setInterval(seconds, 1000)
+     };
 
-    // function seconds(){
-    //     $inputText.value++ 
-    // }
+    function seconds(){
+        $inputText.value++ 
+    };
 
+    function stop(){ 
+        clearTimeout(temp)
+    };
 
+    function reset(){
+        stop()
+        $inputText.value = 0; 
+    }
 
-    timer();
+    $startButton.addEventListener('click', timer, false);
+    $stopButton.addEventListener('click', stop, false);
+    $resetButton.addEventListener('click', reset, false);
+
 })(window, document)
