@@ -1,4 +1,5 @@
   (function challenge22(){
+
     'use strict';
     /*
     Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
@@ -15,7 +16,7 @@
     }
 
 
-    /*
+    /* 
     Agora crie uma função chamada `getFullName` que retorne as propriedades
     `name` e `lastName` dos objetos acima, formando um nome completo.
     A função não deve receber nenhum parâmetro, mas as propriedades `name` e
