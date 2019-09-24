@@ -102,4 +102,6 @@
     console.log( '\nSomar números entrados pelo usuário:' );
     console.log(sum(numbers));
 
+
+
 })(window, document)
