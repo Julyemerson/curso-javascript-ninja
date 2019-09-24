@@ -1,4 +1,4 @@
-  (function challenge22(){
+  (function challenge22(win, doc){
 
     'use strict';
     /*
@@ -29,13 +29,18 @@
     */
     console.log( 'O nome das pessoas é:' );
 
-    function getFullName(){
-      return this.name + ' ' + this.lastName
+    function getName(){
+       this.name;
+       this.lastName; 
     }
 
-    var newPerson = new getFullName(person1.name, person1.lastname)
+    getName.prototype.fullName = function(){
+      return this.person1.name + ' ' + this.person1.lastName; 
+    }
 
-    console.log(newPerson())
+    var newPerson = new getName()
+
+    console.log(newPerson)
 
     /*
     Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -88,4 +93,4 @@
     console.log( '\nSomar números entrados pelo usuário:' );
     // ?
 
-})
+})(window, document)
