@@ -31,8 +31,8 @@
       return this.name + ' ' + this.lastName
     };
 
-    console.log(getFullName.call(person1));
-    console.log(getFullName.call(person2));
+    console.log(getFullName.call( person1 ));
+    console.log(getFullName.call( person2 ));
 
     /*
     Crie uma função chamada `sum`. Essa função pode receber uma lista de
@@ -42,23 +42,18 @@
     os parâmetros passados para essa função.
     */
     function sum(){
-     var result = Array.prototype.reduce.apply( arguments, [function(acumulated, actual){
-        return acumulated + actual;
+     console.log(arguments)
+      return Array.prototype.reduce.apply( arguments, [function(acumulated, actual){
+          return Number( acumulated ) + Number( actual );
       }]);
-
-      var eachItens = Array.prototype.forEach.call(arguments, function(item){
-        console.log('Os itens passados como parametro para função são: '+  item);
-      });
-
-      eachItens
-      console.log('A soma dos parametros passados: ' + result)
-    }
+    };
 
     /*
     Mostre no console que a função acima funciona, invocando-a em 3 console.log
     diferentes, com quantidades variáveis de parâmetros passados.
     */
     console.log( '\nSomar alguns números:' );
+
     console.log(sum(1,1,1));
     console.log(sum(2,2,2));
     console.log(sum(10,10,10))
@@ -82,9 +77,9 @@
     da string. Mostre a representação em string dessa função no console.
     */
     console.log( '\nFunção que limpa entrada do usuário (somente números):' );
-    function justNumbers(string){
+    function justNumbers(str){
       var regex = new RegExp(/\d+/g);
-      return string.match(regex)
+      return str.match(regex)
     }
 
     console.log(justNumbers.toString())
@@ -94,13 +89,13 @@
     */
     console.log( '\nEntrada do usuário limpa. Somente números:' );
     var numbers = justNumbers(userEntry);
-
+    console.log(numbers)
     /*
     Agora com o array de números, utilize a função `sum` para somar todos os
     números desse array e mostre o resultado no console.
     */
     console.log( '\nSomar números entrados pelo usuário:' );
-    console.log(sum(numbers));
+    console.log(sum.apply(sum, numbers));
 
 
 
