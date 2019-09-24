@@ -24,11 +24,12 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     var temp; 
 
      function timer(){
-       temp =  setInterval(seconds, 1000)
+       temp =  setTimeout(seconds, 1000)
      };
 
     function seconds(){
-        $inputText.value++ 
+        $inputText.value++
+        timer() 
     };
 
     function stop(){ 
