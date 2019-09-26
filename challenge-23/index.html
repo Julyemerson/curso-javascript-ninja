@@ -4,25 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>Challenge-23</title>
 </head>
 <body>
-  <input type="text" value="0">
-  <button data-js="btn-numbers" class="btn-numbers">1</button>
-  <button data-js="btn-numbers" class="btn-numbers">2</button>
-  <button data-js="btn-numbers" class="btn-numbers">2</button>
-  <button data-js="btn-numbers" class="btn-numbers">4</button>
-  <button data-js="btn-numbers" class="btn-numbers">5</button>
-  <button data-js="btn-numbers" class="btn-numbers">6</button>
-  <button data-js="btn-numbers" class="btn-numbers">7</button>
-  <button data-js="btn-numbers" class="btn-numbers">8</button>
-  <button data-js="btn-numbers" class="btn-numbers">9</button>
-  <button data-js="btn-numbers" class="btn-numbers">0</button>
-
-  <button data-js="btn-operations" class="btn-operations">+</button>
-  <button data-js="btn-operations" class="btn-operations">-</button>
-  <button data-js="btn-operations" class="btn-operations">*</button>
-  <button data-js="btn-operations" class="btn-operations">/</button>
+  <div class="calculator">
+    <input type="text" data-js="input" value="0" readonly>
+    <div class="calculator-numbers"></div>
+      <button data-js="btn1" class="btn-numbers">1</button>
+      <button data-js="btn2" class="btn-numbers">2</button>
+      <button data-js="btn3" class="btn-numbers">3</button>
+      <button data-js="btn4" class="btn-numbers">4</button>
+      <button data-js="btn5" class="btn-numbers">5</button>
+      <div>
+      <button data-js="btn6" class="btn-numbers">6</button>
+      <button data-js="btn7" class="btn-numbers">7</button>
+      <button data-js="btn8" class="btn-numbers">8</button>
+      <button data-js="btn9" class="btn-numbers">9</button>
+      <button data-js="btn0" class="btn-numbers">0</button>
+      </div>
+    </div>
+    <div class="calculator-operations">
+      <button data-js="plus" class="btn-operations">+</button>
+      <button data-js="minus" class="btn-operations">-</button>
+      <button data-js="mult" class="btn-operations">X</button>
+      <button data-js="division" class="btn-operations">/</button>
+      <button data-js="equal" class="btn-operations">=</button>
+      <button data-js="reset" class="btn-operations">CE</button>
+    </div>
+</div>
 
   <script src="challenge-23.js"></script>
 </body>
