@@ -54,6 +54,10 @@
   };
 
   function handleClickOperation(){
+    var operations = ["+", "-", "x", "/"];
+    if(isLastItemAnOperation(operations)){
+      $input.value = $input.value.slice(0, -1);
+    }
     $input.value += this.value;
   };
 
