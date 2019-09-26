@@ -25,42 +25,38 @@
   input;
   - Ao pressionar o botão "CE", o input deve ficar zerado.
   */
-  var $input = doc.querySelector('[data-js="input"]')
-  
-  var $equal = doc.querySelector('[data-js="equal"]');
-  var $reset = doc.querySelector('[data-js="reset"]')
-  var $plus = doc.querySelector('[data-js="plus"]');
-  var $minus = doc.querySelector('[data-js="minus"]');
-  var $mult = doc.querySelector('[data-js="mult"]'); 
-  var $division = doc.querySelector('[data-js="division"]'); 
-
-  var $btn1 = doc.querySelector('[data-js="btn1"]');
-  var $btn2 = doc.querySelector('[data-js="btn2"]');
-  var $btn3 = doc.querySelector('[data-js="btn3"]');
-  var $btn4 = doc.querySelector('[data-js="btn4"]');
-  var $btn5 = doc.querySelector('[data-js="btn5"]');
-  var $btn6 = doc.querySelector('[data-js="btn6"]');
-  var $btn7 = doc.querySelector('[data-js="btn7"]');
-  var $btn8 = doc.querySelector('[data-js="btn8"]');
-  var $btn9 = doc.querySelector('[data-js="btn9"]');
-  var $btn0 = doc.querySelector('[data-js="btn0"]');
 
 
-  $btn1.addEventListener('click', function(){
-    $input.value += 1; 
+  var $input = doc.querySelector('[data-js="input"]');
+  var $reset = doc.querySelector('[data-js="reset"]');
+  var $buttons = doc.querySelectorAll('[class="btn-numbers"]');
+  var $buttonsOperations = doc.querySelectorAll('[class="btn-operations"]');
+
+
+
+  $buttons.forEach(function(button){
+    button.addEventListener('click', handleClickNumber, false);
   });
-  
+
+  $buttonsOperations.forEach(function(button){
+    button.addEventListener('click', handleClickOperation, false);
+  })
+
+
+  $reset.addEventListener('click', function(){
+    $input.value = 0;
+  }, false);
 
 
 
-  // var btns = [$btn0, $btn1, $btn2, $btn3, $btn4, $btn5, $btn6, $btn7, $btn8, $btn9]
+  function handleClickNumber(){
+    $input.value += this.value;
+  };
 
-  // btns.forEach(function(item, index){
-  //   console.log(item[index])
-  // })
+  function handleClickOperation(){
+    $input.value += this.value;
+  };
 
-
-  
 
 
 
