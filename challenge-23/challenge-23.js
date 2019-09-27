@@ -31,36 +31,55 @@
   var $reset = doc.querySelector('[data-js="reset"]');
   var $buttons = doc.querySelectorAll('[class="btn-numbers"]');
   var $buttonsOperations = doc.querySelectorAll('[class="btn-operations"]');
-
-
+  var $equal = doc.querySelector('[data-js="equal"]');
+  
 
   $buttons.forEach(function(button){
     button.addEventListener('click', handleClickNumber, false);
   });
 
+  $equal.addEventListener('click', handleClickEqual, false)
+
   $buttonsOperations.forEach(function(button){
     button.addEventListener('click', handleClickOperation, false);
   })
 
-
   $reset.addEventListener('click', function(){
     $input.value = 0;
   }, false);
-
-
 
   function handleClickNumber(){
     $input.value += this.value;
   };
 
   function handleClickOperation(){
-    var operations = ["+", "-", "x", "/"];
-    if(isLastItemAnOperation(operations)){
-      $input.value = $input.value.slice(0, -1);
-    }
+    removeLastItemIfItIsAnOperator()
     $input.value += this.value;
   };
 
+  function handleClickEqual(){
+    removeLastItemIfItIsAnOperator();
+    var allValues = $input.value.match(/\d+[+x\/-]?/g);
+    var result = allValues.reduce(function(accumulated, actual){
+      return accumulated + actual;
+    })
+
+    console.log(result)
+  }
+
+  function isLastItemAnOperation(operations){
+    var operations = ["+", "-", "x", "/"];
+    var lastItem = $input.value.split('').pop();
+    return operations.some(function(operator){
+      return operator === lastItem; 
+    }) 
+  };
+
+  function removeLastItemIfItIsAnOperator(){
+    if(isLastItemAnOperation()){
+      $input.value = $input.value.slice(0, -1);
+    }
+  };
 
 
 
