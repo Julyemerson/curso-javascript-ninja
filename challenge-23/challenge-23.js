@@ -32,7 +32,7 @@
   var $buttons = doc.querySelectorAll('[class="btn-numbers"]');
   var $buttonsOperations = doc.querySelectorAll('[class="btn-operations"]');
   var $equal = doc.querySelector('[data-js="equal"]');
-  
+
 
   $buttons.forEach(function(button){
     button.addEventListener('click', handleClickNumber, false);
@@ -53,32 +53,44 @@
   };
 
   function handleClickOperation(){
-    removeLastItemIfItIsAnOperator()
+    $input.value = removeLastItemIfItIsAnOperator($input.value);
     $input.value += this.value;
   };
 
   function handleClickEqual(){
-    removeLastItemIfItIsAnOperator();
+    $input.value = removeLastItemIfItIsAnOperator($input.value);
     var allValues = $input.value.match(/\d+[+x\/-]?/g);
-    var result = allValues.reduce(function(accumulated, actual){
-      return accumulated + actual;
+    $input.value = allValues.reduce(function(accumulated, actual){
+    var firstValue = accumulated.slice(0, -1)
+    var operator = accumulated.split('').pop();
+    var lastValue = removeLastItemIfItIsAnOperator(actual);
+    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+      switch(operator){
+        case '+':
+          return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
+        case '-':
+          return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
+        case 'x':
+          return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
+        case '/':
+          return ( Number(firstValue)  / Number(lastValue) ) + lastOperator;
+      }
     })
-
-    console.log(result)
   }
 
-  function isLastItemAnOperation(operations){
+  function isLastItemAnOperation(number){
     var operations = ["+", "-", "x", "/"];
-    var lastItem = $input.value.split('').pop();
+    var lastItem = number.split('').pop();
     return operations.some(function(operator){
-      return operator === lastItem; 
-    }) 
+      return operator === lastItem;
+    })
   };
 
-  function removeLastItemIfItIsAnOperator(){
-    if(isLastItemAnOperation()){
-      $input.value = $input.value.slice(0, -1);
+  function removeLastItemIfItIsAnOperator(number){
+    if(isLastItemAnOperation(number)){
+      return number.slice(0, -1);
     }
+    return number;
   };
 
 
