@@ -23,20 +23,20 @@
   */
   // ?
 
-  function DOM(element){
-    doc.querySelector(this.element)
-  }
-
-  DOM.prototype.on = function(element,event, callback){
-    DOM(element).addEventListener(event, callback)
+  function DOM(elements){
+    this.element = doc.querySelectorAll(elements);
   };
 
-  DOM.prototype.off = function(){
+  DOM.prototype.on = function on(){
 
   };
 
-  DOM.prototype.get = function(){
+  DOM.prototype.off = function off(){
 
+  };
+
+  DOM.prototype.get = function get(){
+   return this.element
   };
 
 
