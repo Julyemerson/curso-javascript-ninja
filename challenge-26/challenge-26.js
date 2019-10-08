@@ -24,7 +24,7 @@
   // ?
 
   function DOM(element){
-    doc.querySelector(this.element)
+    this.element
   }
 
   DOM.prototype.on = function(element,event, callback){
