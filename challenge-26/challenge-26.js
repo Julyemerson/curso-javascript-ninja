@@ -23,20 +23,24 @@
   */
   // ?
 
-  function DOM(element){
-    this.element
-  }
-
-  DOM.prototype.on = function(element,event, callback){
-    DOM(element).addEventListener(event, callback)
+  function DOM(elements){
+    this.element = doc.querySelectorAll(elements);
   };
 
-  DOM.prototype.off = function(){
-
+  DOM.prototype.on = function on(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    })
   };
 
-  DOM.prototype.get = function(){
+  DOM.prototype.off = function off(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.removeEventListener(eventType, callback, false);
+    })
+  };
 
+  DOM.prototype.get = function get(){
+   return this.element
   };
 
 
