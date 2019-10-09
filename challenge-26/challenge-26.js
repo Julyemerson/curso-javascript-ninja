@@ -27,8 +27,10 @@
     this.element = doc.querySelectorAll(elements);
   };
 
-  DOM.prototype.on = function on(){
-
+  DOM.prototype.on = function on(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    })
   };
 
   DOM.prototype.off = function off(){
