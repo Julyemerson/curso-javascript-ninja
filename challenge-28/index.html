@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Challenge-28</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <h2>Consulta CEP</h2>
+                <label for="cepFieldId">Digite seu CEP :</label>
+                <input type="text" class="form-control" id="cepFieldId" data-js="cepField">
+            </div>
+                <button type="submit" class="btn btn-primary" href="#" data-js="btnSubmit">Enviar</button>
+            <div class="form-group">
+                <label for="logradouroID">Logradouro</label>
+                <input type="text" class="form-control" id="logradouroID" data-js="logradouroField" readonly>
+                <label for="bairroID">Bairro</label>
+                <input type="text" class="form-control" id="bairroID" data-js="bairroField" readonly>
+                <label for="cidadeID">Cidade</label>
+                <input type="text" class="form-control" id="cidadeID" data-js="cidadeField" readonly>
+                <label for="estadoID">Estado</label>
+                <input type="text" class="form-control" id="estadoID" data-js="estadoField" readonly>
+             </div>
+        </form>
+    </div>
+    <script src="challenge-28.js"></script>
+</html>
