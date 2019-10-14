@@ -36,50 +36,108 @@
     var $btnSubmit = doc.querySelector('[data-js="btnSubmit"]');
     var ajax = new XMLHttpRequest();
 
-    $btnSubmit.addEventListener('click', getCep, false)
+  function DOM(elements){
+    this.element = doc.querySelectorAll(elements);
+  };
 
-    function getCep(event){
-      event.preventDefault()
-      ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/'+ cleanCep() +'.json')
-      ajax.send(null)
-      ajaxEvent()
-    }
+  DOM.prototype.on = function on(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+    })
+  };
 
-    function isValidCep(){
-      return /\d+[-]?\d+/.test($cep.value)
-    }
+  DOM.prototype.off = function off(eventType, callback){
+    Array.prototype.forEach.call(this.element, function(element){
+      element.removeEventListener(eventType, callback, false);
+    })
+  };
 
-    function cleanCep(){
-      return isValidCep() ? $cep.value : alert('Digite um CPF valido')
-    }
+  DOM.prototype.get = function get(){
+   return this.element
+  };
 
-    function ajaxEvent(){
-      ajax.addEventListener('readystatechange', function(){
-      insertDataOnForm()
-      },false);
-    }
+  DOM.prototype.forEach = function forEach(){
+      return Array.prototype.forEach.apply(this.element, arguments)
+  }
 
-    function insertDataOnForm(){
-      if(isRequestOk()){
-        var data = JSON.parse(ajax.responseText);
-        isCepOk(data)
-      }
-    }
+  DOM.prototype.map = function map(){
+    return Array.prototype.map.apply(this.element, arguments)
+  }
 
-    function isCepOk(cep){
-      if(cep.status != 1){
-        alert('Cep não encontrado')
-      }else{
-        $rua.value = cep.address;
-        $bairro.value = cep.district;
-        $cidade.value = cep.city;
-        $estado.value = cep.state;
-      }
-    }
+  DOM.prototype.filter = function filter(){
+      return Array.prototype.filter.apply(this.element, arguments)
+  }
 
-    function isRequestOk(){
-      return ajax.readyState === 4 && ajax.status === 200;
+  DOM.prototype.reduce = function reduce(){
+      return Array.prototype.reduce.apply(this.element, arguments)
+  }
+
+  DOM.prototype.reduceRight = function reduceRight(){
+      return Array.prototype.reduceRight.apply(this.element, arguments)
+  }
+
+  DOM.prototype.every = function every(){
+      return Array.prototype.every.apply(this.element, arguments)
+  }
+
+  DOM.prototype.some = function some(){
+      return Array.prototype.some.apply(this.element, arguments)
+  }
+
+  DOM.is = function(obj){
+    return {
+        tipo: Object.prototype.toString.call(obj),
+        Nome: Object.prototype.toString.call(obj)
+            .split(' ')[1]
+            .split(']')[0]
     }
+  };
+
+
+  $btnSubmit.addEventListener('click', getCep, false)
+
+  function getCep(event){
+    event.preventDefault()
+    ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep/'+ cleanCep() +'.json')
+    ajax.send(null)
+    ajaxEvent()
+  }
+
+  function isValidCep(){
+    return /\d+[-]?\d+/.test($cep.value)
+  }
+
+  function cleanCep(){
+    return isValidCep() ? $cep.value : alert('Digite um CPF valido')
+  }
+
+  function ajaxEvent(){
+    ajax.addEventListener('readystatechange', function(){
+    insertDataOnForm()
+    },false);
+  }
+
+  function insertDataOnForm(){
+    if(isRequestOk()){
+      var data = JSON.parse(ajax.responseText);
+      isCepOk(data)
+    }
+  }
+
+  function isCepOk(cep){
+    if(cep.status != 1){
+      alert('Não encontramos endereço para o CEP')
+    }else{
+      $rua.value = cep.address;
+      $bairro.value = cep.district;
+      $cidade.value = cep.city;
+      $estado.value = cep.state;
+    }
+  }
+
+  function isRequestOk(){
+    return ajax.readyState === 4 && ajax.status === 200;
+  }
 
 
 

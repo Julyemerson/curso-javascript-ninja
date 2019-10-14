@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 (function challenge27(){
 
   'use strict';
 
   /*
-=======
-(function challenge27(win, doc){
-
-    'use strict';
-
-    /*
->>>>>>> 269422cf6dc0be0d2ca0b26e264dca607f067dfe
     Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
     métodos semelhantes aos que existem no array, mas que sirvam para os
     elementos do DOM selecionados.
@@ -30,12 +22,6 @@
     Crie os seguintes métodos para verificação de tipo:
     - isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
     O método isNull deve retornar `true` se o valor for null ou undefined.
-<<<<<<< HEAD
-  */
-
-
-})
-=======
     */
 
    function DOM(elements){
@@ -85,7 +71,7 @@
   DOM.prototype.some = function some(){
       return Array.prototype.some.apply(this.element, arguments)
   }
-  
+
   DOM.is = function(obj){
     return {
         tipo: Object.prototype.toString.call(obj),
@@ -94,7 +80,6 @@
             .split(']')[0]
     }
   };
-  
+
 
 })(window, document)
->>>>>>> 269422cf6dc0be0d2ca0b26e264dca607f067dfe
