@@ -1,4 +1,4 @@
-(function() {
+(function(doc) {
   'use strict';
 
   /*
@@ -7,7 +7,7 @@
   A primeira etapa vai ser o cadastro de veículos, de deverá funcionar da
   seguinte forma:
   - No início do arquivo, deverá ter as informações da sua empresa - nome e
-  telefone (já vamos ver como isso vai ser feito)
+  telefone (já vamos ver como ichasso vai ser feito)
   - Ao abrir a tela, ainda não teremos carros cadastrados. Então deverá ter
   um formulário para cadastro do carro, com os seguintes campos:
     - Imagem do carro (deverá aceitar uma URL)
@@ -36,4 +36,17 @@
   que será nomeado de "app".
   */
 
-})();
+  var $urlImageCar = doc.querySelector('[data-js="urlCar"]');
+  var $brandCar = doc.querySelector('[data-js="brand"]');
+  var $modelCar = doc.querySelector('[data-js="model"]');
+  var $yearCar = doc.querySelector('[data-js="year"]');
+  var $idCar = doc.querySelector('[data-js="id"]');
+  var $color = doc.querySelector('[data-js="color"]');
+  var $btnSubmit = doc.querySelector('[data-js="submitCar"]');
+
+ $btnSubmit.addEventListener('click', sendData, false)
+
+ function sendData() {
+
+ }
+})(document);

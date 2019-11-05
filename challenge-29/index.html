@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Cadastro Veiculo</title>
+</head>
+<body>
+  <h2 data-js="company-name"></h2>
+  <h2 data-js="company-phone"></h2>
+
+<div class="container">
+    <form>
+      <div class="form-group">
+        <label for="imgCar">Imagem:</label>
+        <input data-js="urlCar" type="text" class="form-control" name="img" id="imgCar">
+
+        <label for="brandCar">Marca:</label>
+        <input data-js="brand" type="text" class="form-control" name="brand" id="brandCar">
+
+        <label for="modelCar">Modelo:</label>
+        <input data-js="model" type="text" class="form-control" name="model" id="modelCar">
+
+        <label for="yearCar">Ano:</label>
+        <input data-js="year" type="text" class="form-control" name="year" id="yearCar">
+
+        <label for="idCar">Placa:</label>
+        <input data-js="id" type="text" class="form-control" name="keyCar" id="idCar">
+
+        <label for="colorCar">Cor:</label>
+        <input data-js="color" type="text" class="form-control" name="color" id="colorCar">
+        </br>
+        <button data-js="submitCar" type="submit" class="btn btn-primary" href="#">Cadastrar</button>
+
+      </div>
+    </form>
+</div>
+
+  <div class="container">
+    <table class="table">
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <script src="challenge-29.js"></script>
+</body>
+</html>
